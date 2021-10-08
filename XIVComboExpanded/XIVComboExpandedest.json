@@ -3,7 +3,7 @@
   "Name": "XIV Combo Expandedest",
   "Punchline": "Condenses combos and mutually exclusive abilities onto a single button. Plus extras.",
   "Description": "This is an enhanced version of XIVCombo with a variety of new added features.\nThis is mutually exclusive with other XIVCombo versions, so make sure they do not conflict!",
-  "RepoUrl": "https://github.com/Grammernatzi/XIVComboPluginExpandedest"
+  "RepoUrl": "https://github.com/Grammernatzi/XIVComboPluginExpandedest",
   "IconUrl": "https://raw.githubusercontent.com/daemitus/XIVComboPlugin/master/res/icon.png",
   "ImageUrls": []
 }
