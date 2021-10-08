@@ -33,6 +33,8 @@
 
   <PropertyGroup>
     <DalamudLibPath>$(appdata)\XIVLauncher\addon\Hooks\dev\</DalamudLibPath>
+    <AssemblyName>XIVComboExpandedest</AssemblyName>
+    <RootNamespace>XIVComboExpandedestPlugin</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
