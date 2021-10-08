@@ -1,102 +1,67 @@
-# XIVComboPlugin
-This plugin condenses combos and mutually exclusive abilities onto a single button. Thanks to Meli for the initial start, and obviously goat for making any of this possible.
+# Disclaimer: Action Culling
+
+There's been a lot of actions in here that I've been sort of iffy about ever since I added them; whether they were too cheaty, made things too automatic, or such, since I was mostly following recommendations from friends.
+Having talked with moderators on the Dalamud/XIVLauncher discord, I've come to the conclusion that I'll be removing actions that are *too* automated. I know this probably won't go over well with everyone, but ultimately I want to make sure people can use this plugin guilt-free, as it's mostly meant to be what I want my own version of XIVCombo to be.
+I apologize for any upset this might cause; it was ultimately something I felt like I had to do, to keep things clean.
+
+# XIVComboPlugin Expandedest
+This is an expanded version of Daemitus's XIVCombo Expanded for personal use, that I am modifying for personal use by adding features that me and friends would like to use. These can be used in any fork you like, no credit needed. None of these features will be added to the original XIVCombo, so please do not bug the creator of that about it. Thank you Daemitus, attickdoor, goaaats, and everyone else who contributed to making this plugin possible. Additional thanks to ALymphocyte for coding help!
+
+If you would like to use this plugin, you can get it from this repo: `https://github.com/grammernatzi/MyDalamudPlugins/raw/master/pluginmaster.json`
+
+## Additions added (all optional!)
+
+* MCH/PLD/SMN/etc won't have action upgrade traits break due to unfinished job quests conflicting with XIVCombo features anymore.
+* Respective raises on RDM/SMN/SCH/WHM/AST get replaced with Swiftcast when it is off cooldown (and Dualcast isn't up).
+* Cure 2 becomes Cure when synced below level 30
+* Cure 2 and Medica become Afflatus Solace and Rapture respectively when lilies are available
+* Benefic 2 becomes Benefic when synced below level 26
+* Minor Arcana becomes Sleeve Draw when a card is not drawn.
+* Single-target and AoE combos become Holy Spirit/Circle when Requiescat is up
+* Dragon Kick becomes Bootshine while a form is up and Leaden Fist is up.
+* AoE Overcap prevention on GNB has also been added to WAR/DRK.
+* Burst Strike will now turn into Bloodfest if gauge is empty.
+* No Mercy will turn into Bow Shock, and then Sonic Break, while buff is active.*
+* Single-target combo and AoE combo on WAR will be replaced by Fell Cleave/Decimate during Inner Release.
+* Nascent Flash will turn into Raw Intuition when you are below level 76.
+* Meikyo will be replaced by Jinpu/Shifu while its buff is up.
+* Shoha will replace Iaijutsu/Tsubame when Meditation gauge is full.
+* Tsubame becomes Iaijutsu when Sen gauge isn't empty.
+* Fire 1 becomes Fire 3 outside of Astral Fire and when Firestarter proc is up. Also replaces Enochian with Fire 1/3 before you get Fire 4 when in AF (if Enochian is up or you don't have it yet).
+* Blizzard 1 becomes Blizzard 3 when outside of Umbral Ice. Freeze now becomes Blizzard 2 when level-synced, as well.
+* All Bahamut/Phoenix/Dreadwyrm-related actions on Summoner are now on one button.
+* Verstone/Verfire will turn into Veraero/Verthunder when Dualcast/Swiftcast is up, with an additional feature that makes Verfire Verthunder outside of combat for openers.
+* When Suiton (or Hidden) is up, Trick Attack will replace Kassatsu.*
+* In the same vein, Ten Chi Jin (the move) will turn into Meisui while Suiton is up*.
+* Chi is replaced with Jin while Kassatsu is up if you have Enhanced Kassatsu to help with muscle memory.
+* Hide becomes Mug while in combat.
+* Your combos can become Ninjutsu while you are using Mudra (so you don't have to bind Ninjutsu separately, it doesn't actually do the Mudras for you).
+* Bard DoTs alternate between each other and also turn into Iron Jaws when both are up.
+* Burst Shot/Quick Nock will turn into Apex Arrow when gauge is full.
+* Cascade, Flourish, and both Fan Dances change into dance steps while dancing. This helps ensure you can still dance with combos on, without using auto dance. You can additionally configure which actions you want to be replaced by dance steps, if you so desire.
+
+For actions marked with a *, you may want Remind Me or a similar plugin to keep track of cooldowns while they are invisible.
 
 ## About
-XIVCombo is a plugin to allow for "one-button" combo chains, as well as implementing various other mutually-exclusive button consolidation and quality of life replacements. 
+XIVCombo is a plugin to allow for "one-button" combo chains, as well as implementing various other mutually-exclusive button consolidation and quality of life replacements. Some examples of the functionality it provides:
+* Most weaponskill combos are put onto a single button (unfortunately not including MNK, though MNK gets a few good features too!).
+* Enochian changes into Fire 4 and Blizzard 4 depending on your stacks, a la PvP Enochian.
+* Hypercharge turns into Heat Blast while Overheated.
+* Jump/High Jump turns into Mirage Dive while Dive Ready.
+* And many, many more!
 
 For some jobs, this frees a massive amount of hotbar space (looking at you, DRG). For most, it removes a lot of mindless tedium associated with having to press various buttons that have little logical reason to be separate.
 
 ## Installation
-* Type `/xlplugins` in-game to access the plugin installer and updater. Any releases on this github page have been removed to facilitate proper installation going forward.
+* Add the repo as a custom repo using /xlsettings in-game. Then, type `/xlplugins` in-game to access the plugin installer and updater. 
+
 ## In-game usage
 * Type `/pcombo` to pull up a GUI for editing active combo replacements.
 * Drag the named ability from your ability list onto your hotbar to use.
   * For example, to use DRK's Souleater combo, first check the box, then place Souleater on your bar. It should automatically turn into Hard Slash.
   * The description associated with each combo should be enough to tell you which ability needs to be placed on the hotbar.
+  * Make sure you press "Save and close". Don't just X out.
 ### Examples
-![](https://github.com/daemitus/xivcomboplugin/raw/master/res/souleater_combo.gif)
-![](https://github.com/daemitus/xivcomboplugin/raw/master/res/hypercharge_heat_blast.gif)
-![](https://github.com/daemitus/xivcomboplugin/raw/master/res/eno_swap.gif)
-
-## Known Issues
-* None, for now!
-
-## Full list of supported combos
-Secret forbidden combos are noted with a ⭐ icon.
-
-| Job | Name | Description |
-|-----|------|-------------|
-| AST | Draw on Play | Play turns into Draw when no card is drawn, as well as the usual Play behavior. |
-| AST | Benefic 2 to Benefic Level Sync | Changes Benefic 2 to Benefic when below level 26 in synced content. |
-| BLM | Enochian Stance Switcher | Change Enochian to Fire 4 or Blizzard 4 depending on stance. |
-| BLM | Umbral Soul/Transpose Switcher | Change Transpose into Umbral Soul when Umbral Soul is usable. |
-| BLM | (Between the) Ley Lines | Change Ley Lines into BTL when Ley Lines is active. |
-| BLM | Fire 1/3 Feature | Fire 1 becomes Fire 3 outside of Astral Fire, and when Firestarter proc is up. |
-| BLM | Blizzard 1/2/3 Feature | Blizzard 1 becomes Blizzard 3 when out of Umbral Ice. Freeze becomes Blizzard 2 when synced. |
-| BRD | Wanderer's into Pitch Perfect | Replaces Wanderer's Minuet with Pitch Perfect while in WM. |
-| BRD | Heavy Shot into Straight Shot | Replaces Heavy Shot/Burst Shot with Straight Shot/Refulgent Arrow when procced. |
-| BRD | Iron Jaws Feature | Iron Jaws is replaced with Caustic Bite/Stormbite if one or both are not up. Alternates between the two if Iron Jaws isn't available. |
-| DNC | Fan Dance Combos | Change Fan Dance and Fan Dance 2 into Fan Dance 3 while flourishing. |
-| DNC | Dance Step Combo ⭐ | Change Standard Step and Technical Step into each dance step while dancing. |
-| DNC | Flourish Proc Saver | Change Flourish into any available procs before using. |
-| DNC | Single Target Multibutton | Change Cascade into procs and combos as available. |
-| DNC | AoE Multibutton | Change Windmill into procs and combos as available |
-| DNC | Dance Step Feature | Change actions into dance steps while dancing. | 
-| DRG | Jump + Mirage Dive | Replace (High) Jump with Mirage Dive when Dive Ready. |
-| DRG | BOTD Into Stardiver | Replace Blood of the Dragon with Stardiver when in Life of the Dragon. |
-| DRG | Coerthan Torment Combo | Replace Coerthan Torment with its combo chain. |
-| DRG | Chaos Thrust Combo | Replace Chaos Thrust with its combo chain. |
-| DRG | Full Thrust Combo | Replace Full Thrust with its combo chain. |
-| DRK | Souleater Combo | Replace Souleater with its combo chain. |
-| DRK | Stalwart Soul Combo | Replace Stalwart Soul with its combo chain. |
-| DRK | Delirium Feature | Replace Souleater and Stalwart Soul with Bloodspiller and Quietus when Delirium is active. |
-| GNB | Solid Barrel Combo | Replace Solid Barrel with its combo chain. |
-| GNB | Wicked Talon Combo | Replace Wicked Talon with its combo chain. |
-| GNB | Wicked Talon Continuation | In addition to the Wicked Talon combo chain, put Continuation moves on Wicked Talon when appropriate. |
-| GNB | Demon Slaughter Combo | Replace Demon Slaughter with its combo chain. |
-| GNB | Fated Circle Feature | In addition to the Demon Slaughter combo, add Fated Circle when charges are full. |
-| MCH | (Heated) Shot Combo | Replace either form of Clean Shot with its combo chain. |
-| MCH | Spread Shot Heat | Replace Spread Shot with Auto Crossbow when overheated. |
-| MCH | Hypercharge Feature | Replace Heat Blast and Auto Crossbow with Hypercharge when not overheated. |
-| MCH | Overdrive Feature | Replace Rook Autoturret and Automaton Queen with Overdrive while active. |
-| MCH | Gauss Round / Ricochet Feature ⭐ | Replace Gauss Round and Ricochet with one or the other depending on which has more charges. |
-| MNK | Monk AoE Combo | Replaces Rockbreaker with the AoE combo chain, or Rockbreaker when Perfect Balance is active. |
-| NIN | Armor Crush Combo | Replace Armor Crush with its combo chain. |
-| NIN | Aeolian Edge Combo | Replace Aeolian Edge with its combo chain. |
-| NIN | Hakke Mujinsatsu Combo | Replace Hakke Mujinsatsu with its combo chain. |
-| NIN | Dream to Assassinate | Replace Dream Within a Dream with Assassinate when Assassinate Ready. |
-| PLD | Goring Blade Combo | Replace Goring Blade with its combo chain. |
-| PLD | Royal Authority Combo | Replace Royal Authority/Rage of Halone with its combo chain. |
-| PLD | Atonement Feature | Replace Royal Authority with Atonement when under the effect of Sword Oath. |
-| PLD | Prominence Combo | Replace Prominence with its combo chain. |
-| PLD | Requiescat Confiteor | Replace Requiescat with Confiter while under the effect of Requiescat. |
-| PLD | Confiteor Feature ⭐ | Replace Holy Spirit/Circle with Confiteor while MP is under 4000 and Requiescat is up. |
-| RDM | Red Mage AoE Combo | Replaces Veraero/Verthunder 2 with Impact when Dualcast or Swiftcast are active. |
-| RDM | Redoublement combo | Replaces Redoublement with its combo chain, following enchantment rules. |
-| RDM | Redoublement Combo Plus ⭐ | Replaces Redoublement with Verflare/Verholy after Enchanted Redoublement, whichever is more appropriate.\nRequires Redoublement Combo. |
-| RDM | Verproc into Jolt | Replaces Verstone/Verfire with Jolt/Scorch when no proc is available. |
-| RDM | Verproc into Jolt Plus | Additionally replaces Verstone/Verfire with Veraero/Verthunder if dualcast/swiftcast are up.\nRequires Verproc into Jolt. |
-| RDM | Verproc into Jolt Plus Opener Feature | Turns Verfire into Verthunder when out of combat.\nRequires Verproc into Jolt Plus. |
-| SAM | Yukikaze Combo | Replace Yukikaze with its combo chain. |
-| SAM | Gekko Combo | Replace Gekko with its combo chain. |
-| SAM | Kasha Combo | Replace Kasha with its combo chain. |
-| SAM | Mangetsu Combo | Replace Mangetsu with its combo chain. |
-| SAM | Oka Combo | Replace Oka with its combo chain. |
-| SAM | Seigan to Third Eye | Replace Seigan with Third Eye when not procced. |
-| SAM | Tsubame-gaeshi to Iaijutsu | Replace Tsubame-gaeshi with Iaijutsu when Sen is empty. |
-| SAM | Tsubame-gaeshi to Shoha | Replace Tsubame-gaeshi with Shoha when meditation is 3. |
-| SAM | Iaijutsu to Tsubame-gaeshi | Replace Iaijutsu with Tsubame-gaeshi when Sen is not empty. |
-| SAM | Iaijutsu to Shoha | Replace Iaijutsu with Shoha when meditation is 3. |
-| SCH | Seraph Fey Blessing/Consolation | Change Fey Blessing into Consolation when Seraph is out. |
-| SCH | ED Aetherflow | Change Energy Drain into Aetherflow when you have no more Aetherflow stacks. |
-| SMN | Demi-summon combiners | Dreadwyrm Trance, Summon Bahamut, and Firebird Trance are now one button.\nDeathflare, Enkindle Bahamut, and Enkindle Phoenix are now one button. |
-| SMN | Brand of Purgatory Combo | Replaces Fountain of Fire with Brand of Purgatory when under the affect of Hellish Conduit. |
-| SMN | ED Fester | Change Fester into Energy Drain when out of Aetherflow stacks. |
-| SMN | ES Painflare | Change Painflare into Energy Syphon when out of Aetherflow stacks. |
-| WAR | Storms Path Combo | Replace Storms Path with its combo chain. |
-| WAR | Storms Eye Combo | Replace Storms Eye with its combo chain. |
-| WAR | Mythril Tempest Combo | Replace Mythril Tempest with its combo chain. |
-| WAR | Nascent Flash Feature | Replace Nascent Flash with Raw intuition when level synced below 76. |
-| WHM | Solace into Misery | Replaces Afflatus Solace with Afflatus Misery when Misery is ready to be used. |
-| WHM | Rapture into Misery | Replaces Afflatus Rapture with Afflatus Misery when Misery is ready to be used. |
-| WHM | Cure 2 to Cure Level Sync | Changes Cure 2 to Cure when below level 30 in synced content. |
+![](https://github.com/attickdoor/xivcomboplugin/raw/master/res/souleater_combo.gif)
+![](https://github.com/attickdoor/xivcomboplugin/raw/master/res/hypercharge_heat_blast.gif)
+![](https://github.com/attickdoor/xivcomboplugin/raw/master/res/eno_swap.gif)
