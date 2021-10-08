@@ -156,12 +156,6 @@ namespace XIVComboExpandedestPlugin.Combos
                         return RDM.Veraero;
                 }
 
-                if (IsEnabled(CustomComboPreset.RedMageVerprocOpenerFeature))
-                {
-                    if (!HasEffect(RDM.Buffs.VerstoneReady) && !HasCondition(ConditionFlag.InCombat) && level >= RDM.Levels.Veraero)
-                        return RDM.Veraero;
-                }
-
                 if (HasEffect(RDM.Buffs.VerstoneReady))
                     return RDM.Verstone;
 
