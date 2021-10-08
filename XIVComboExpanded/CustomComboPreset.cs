@@ -9,6 +9,13 @@ namespace XIVComboExpandedestPlugin
     {
         // Last enum used: 102
         // ====================================================================================
+        #region ALL CLASSES
+
+        [CustomComboInfo("Raise to Swiftcast Feature", "Replaces the respective raise on RDM/SMN/SCH/WHM/AST with Swiftcast when it is off cooldown (and Dualcast isn't up).", All.JobID, All.Raise, All.Resurrection, All.Ascend, All.Verraise)]
+        AllSwiftcastFeature = 94,
+
+        #endregion
+
         #region ASTROLOGIAN
 
         [CustomComboInfo("Draw on Play", "Play turns into Draw when no card is drawn, as well as the usual Play behavior.", AST.JobID, AST.Play)]

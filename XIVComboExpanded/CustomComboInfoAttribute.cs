@@ -52,6 +52,7 @@ namespace XIVComboExpandedestPlugin
         {
             return key switch
             {
+                0 => "All Classes",
                 1 => "Gladiator",
                 2 => "Pugilist",
                 3 => "Marauder",
