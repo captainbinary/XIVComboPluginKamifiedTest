@@ -87,18 +87,18 @@ namespace XIVComboExpandedestPlugin.Combos
 
             if (actionID == WHM.Cure2)
             {
+                if (IsEnabled(CustomComboPreset.WhiteMageSolaceMiseryFeature) && gauge.BloodLily == 3)
+                    return WHM.AfflatusMisery;
                 if (level >= WHM.Levels.AfflatusSolace && gauge.Lily > 0)
                     return WHM.AfflatusSolace;
-
-                return actionID;
             }
 
             if (actionID == WHM.Medica)
             {
+                if (IsEnabled(CustomComboPreset.WhiteMageRaptureMiseryFeature) && gauge.BloodLily == 3 && level >= WHM.Levels.AfflatusRapture)
+                    return WHM.AfflatusMisery;
                 if (level >= WHM.Levels.AfflatusRapture && gauge.Lily > 0)
                     return WHM.AfflatusRapture;
-
-                return actionID;
             }
 
             return actionID;
