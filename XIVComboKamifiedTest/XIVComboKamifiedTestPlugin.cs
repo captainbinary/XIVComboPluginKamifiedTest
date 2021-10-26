@@ -38,7 +38,7 @@ namespace XIVComboKamifiedTestPlugin
             Service.IconReplacer = new IconReplacer();
 
             this.configWindow = new();
-            this.windowSystem = new("XIVComboExpanded");
+            this.windowSystem = new("XIVComboKamified");
             this.windowSystem.AddWindow(this.configWindow);
 
             Service.Interface.UiBuilder.OpenConfigUi += this.OnOpenConfigUi;
@@ -52,7 +52,7 @@ namespace XIVComboKamifiedTestPlugin
         }
 
         /// <inheritdoc/>
-        public string Name => "XIV Combo Expandedest";
+        public string Name => "XIV Combo Kamified";
 
         /// <inheritdoc/>
         public void Dispose()

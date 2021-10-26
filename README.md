@@ -4,7 +4,7 @@ There's been a lot of actions in here that I've been sort of iffy about ever sin
 Having talked with moderators on the Dalamud/XIVLauncher discord, I've come to the conclusion that I'll be removing actions that are *too* automated. I know this probably won't go over well with everyone, but ultimately I want to make sure people can use this plugin guilt-free, as it's mostly meant to be what I want my own version of XIVCombo to be.
 I apologize for any upset this might cause; it was ultimately something I felt like I had to do, to keep things clean.
 
-# XIVComboPlugin Expandedest
+# XIVComboPlugin Kamified
 This is an expanded version of Daemitus's XIVCombo Expanded for personal use, that I am modifying for personal use by adding features that me and friends would like to use. These can be used in any fork you like, no credit needed. None of these features will be added to the original XIVCombo, so please do not bug the creator of that about it. Thank you Daemitus, attickdoor, goaaats, and everyone else who contributed to making this plugin possible. Additional thanks to ALymphocyte for coding help!
 
 If you would like to use this plugin, you can get it from this repo: `https://github.com/grammernatzi/MyDalamudPlugins/raw/master/pluginmaster.json`

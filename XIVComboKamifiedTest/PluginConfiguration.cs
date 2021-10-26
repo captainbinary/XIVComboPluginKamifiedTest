@@ -29,7 +29,7 @@ namespace XIVComboKamifiedTestPlugin
         /// Gets or sets a value indicating whether to allow and display secret combos.
         /// </summary>
         [JsonProperty("Debug")]
-        public bool EnableSecretCombos { get; set; } = false;
+        public bool EnableSecretCombos { get; set; } = true;
 
         /// <summary>
         /// Gets or sets an array of 4 ability IDs to interact with the <see cref="CustomComboPreset.DancerDanceComboCompatibility"/> combo.

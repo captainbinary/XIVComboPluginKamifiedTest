@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Authors>attick, daemitus, alymphocyte, grammernatzi</Authors>
     <Company>-</Company>
-    <Version>1.1.2.99</Version>
+    <Version>1.2.4</Version>
     <Description>This plugin condenses combos and mutually exclusive abilities onto a single button.</Description>
     <Copyright>Copyleft my chocobo 2021 SQUEAK</Copyright>
     <PackageProjectUrl>https://github.com/captainbinary/XIVComboPluginKamifiedTest</PackageProjectUrl>
@@ -19,12 +19,8 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputPath>bin\$(Configuration)\</OutputPath>
+	<ProjectDir>C:\Users\talon\source\repos\XIVComboPluginKamifiedTest\XIVComboKamifiedTest</ProjectDir>
     <NoWarn>CS1591</NoWarn>
-  </PropertyGroup>
-
-  <PropertyGroup Label="Documentation">
-    <DocumentationFile></DocumentationFile>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -37,13 +33,17 @@
     <RootNamespace>XIVComboKamifiedTestPlugin</RootNamespace>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DocumentationFile>bin\Release\XIVComboKamifiedTest.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <AdditionalFiles Include="..\stylecop.json" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DalamudLinter" Version="1.0.3" />
-    <PackageReference Include="DalamudPackager" Version="2.1.2" />
+    <PackageReference Include="DalamudPackager" Version="2.1.4" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.333">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -69,4 +69,8 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
+
+	<Target Name="PackagePlugin" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
+    <DalamudPackager ProjectDir="$(ProjectDir)" OutputPath="$(OutputPath)" AssemblyName="$(AssemblyName)" MakeZip="true" />
+  </Target>
 </Project>

@@ -13,9 +13,12 @@ namespace XIVComboKamifiedTestPlugin.Combos
             StraightShot = 98,
             VenomousBite = 100,
             QuickNock = 106,
+            Bloodletter = 110,
             Windbite = 113,
+            EmpyrealArrow = 3558,
             WanderersMinuet = 3559,
             IronJaws = 3560,
+            SideWinder = 3562,
             PitchPerfect = 7404,
             CausticBite = 7406,
             Stormbite = 7407,
@@ -41,8 +44,12 @@ namespace XIVComboKamifiedTestPlugin.Combos
         public static class Levels
         {
             public const byte
+                VenomousBite = 6,
+                Bloodletter = 12,
                 Windbite = 30,
+                EmpyrealArrow = 54,
                 IronJaws = 56,
+                Sidewinder = 60,
                 BiteUpgrade = 64,
                 RefulgentArrow = 70,
                 BurstShot = 76;
@@ -152,6 +159,57 @@ namespace XIVComboKamifiedTestPlugin.Combos
                 var gauge = GetJobGauge<BRDGauge>();
                 if (gauge.SoulVoice == 100)
                     return BRD.ApexArrow;
+            }
+
+            return actionID;
+        }
+    }
+
+    internal class BardSingleTarget : CustomCombo
+    {
+        protected override CustomComboPreset Preset => CustomComboPreset.BardSingleTarget;
+
+        protected override uint Invoke(uint actionID, uint lastComboActionID, float comboTime, byte level)
+        {
+            if (actionID == BRD.HeavyShot)
+            {
+                // Sidewinder
+                if (level > BRD.Levels.Sidewinder)
+                {
+                    var swCooldown = GetCooldown(BRD.SideWinder);
+                    if (swCooldown.CooldownRemaining == 0)
+                        return BRD.SideWinder;
+                }
+
+                // Empyreal Arrow
+                if (level > BRD.Levels.EmpyrealArrow)
+                {
+                    var eaCooldown = GetCooldown(BRD.EmpyrealArrow);
+                    if (eaCooldown.CooldownRemaining == 0)
+                        return BRD.EmpyrealArrow;
+                }
+
+                // Straight Shot Calc
+                if (HasEffect(BRD.Buffs.StraightShotReady))
+                {
+                    if (level > BRD.Levels.RefulgentArrow)
+                    {
+                        return BRD.RefulgentArrow;
+                    }
+                    else
+                    {
+                        return BRD.StraightShot;
+                    }
+                }
+
+                // Bloodletter
+                if (level > BRD.Levels.Bloodletter)
+                {
+                    Ch
+                    var blCooldown = GetCooldown(BRD.Bloodletter);
+                    if (blCooldown.CooldownRemaining == 0)
+                        return BRD.Bloodletter;
+                }
             }
 
             return actionID;

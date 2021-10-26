@@ -8,10 +8,12 @@ namespace XIVComboKamifiedTestPlugin.Combos
         public const byte JobID = 28;
 
         public const uint
+            Broil = 3584,
             FeyBless = 16543,
             Consolation = 16546,
             EnergyDrain = 167,
-            Aetherflow = 166;
+            Aetherflow = 166,
+            LucidDreaming = 7562;
 
         public static class Buffs
         {
@@ -25,7 +27,9 @@ namespace XIVComboKamifiedTestPlugin.Combos
 
         public static class Levels
         {
-            // public const byte placeholder = 0;
+            public const byte
+                LucidDreaming = 24,
+                Broil = 54;
         }
     }
 
@@ -57,6 +61,23 @@ namespace XIVComboKamifiedTestPlugin.Combos
                 var gauge = GetJobGauge<SCHGauge>();
                 if (gauge.Aetherflow == 0)
                     return SCH.Aetherflow;
+            }
+
+            return actionID;
+        }
+    }
+
+    internal class ScholarManaFeature : CustomCombo
+    {
+        protected override CustomComboPreset Preset => CustomComboPreset.ScholarManaFeature;
+
+        protected override uint Invoke(uint actionID, uint lastComboActionID, float comboTime, byte level)
+        {
+            if (actionID == SCH.Broil)
+            {
+                var cooldown = GetCooldown(SCH.LucidDreaming);
+                if (cooldown.CooldownRemaining == 0)
+                    return SCH.LucidDreaming;
             }
 
             return actionID;

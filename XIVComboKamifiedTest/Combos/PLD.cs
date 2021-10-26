@@ -60,7 +60,7 @@ namespace XIVComboKamifiedTestPlugin.Combos
                     // Replace with Holy Spirit when Requiescat is up
                     if (HasEffect(PLD.Buffs.Requiescat))
                     {
-                        if (IsEnabled(CustomComboPreset.PaladinConfiteorFeature) && level >= PLD.Levels.Confiteor && LocalPlayer.CurrentMp < 4000)
+                        if (IsEnabled(CustomComboPreset.PaladinConfiteorFeature) && level >= PLD.Levels.Confiteor && LocalPlayer?.CurrentMp < 4000)
                             return PLD.Confiteor;
 
                         return PLD.HolySpirit;
@@ -97,7 +97,7 @@ namespace XIVComboKamifiedTestPlugin.Combos
                     if (HasEffect(PLD.Buffs.Requiescat))
                     {
                         // Replace with Confiteor when under 4000 MP
-                        if (IsEnabled(CustomComboPreset.PaladinConfiteorFeature) && level >= PLD.Levels.Confiteor && LocalPlayer.CurrentMp < 4000)
+                        if (IsEnabled(CustomComboPreset.PaladinConfiteorFeature) && level >= PLD.Levels.Confiteor && LocalPlayer?.CurrentMp < 4000)
                             return PLD.Confiteor;
                         return PLD.HolySpirit;
                     }
@@ -137,7 +137,7 @@ namespace XIVComboKamifiedTestPlugin.Combos
                 {
                     if (HasEffect(PLD.Buffs.Requiescat) && level >= PLD.Levels.HolyCircle)
                     {
-                        if (IsEnabled(CustomComboPreset.PaladinConfiteorFeature) && level >= PLD.Levels.Confiteor && LocalPlayer.CurrentMp < 4000)
+                        if (IsEnabled(CustomComboPreset.PaladinConfiteorFeature) && level >= PLD.Levels.Confiteor && LocalPlayer?.CurrentMp < 4000)
                             return PLD.Confiteor;
 
                         return PLD.HolyCircle;

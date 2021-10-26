@@ -10,6 +10,8 @@ namespace XIVComboKamifiedTestPlugin.Combos
         public const uint
             Cure = 120,
             Medica = 124,
+            Raise = 125,
+            Medica2 = 133,
             Cure2 = 135,
             AfflatusSolace = 16531,
             AfflatusRapture = 16534,
@@ -93,7 +95,7 @@ namespace XIVComboKamifiedTestPlugin.Combos
                     return WHM.AfflatusSolace;
             }
 
-            if (actionID == WHM.Medica)
+            if (actionID == WHM.Medica2)
             {
                 if (IsEnabled(CustomComboPreset.WhiteMageRaptureMiseryFeature) && gauge.BloodLily == 3 && level >= WHM.Levels.AfflatusRapture)
                     return WHM.AfflatusMisery;

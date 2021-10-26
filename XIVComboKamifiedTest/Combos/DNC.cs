@@ -59,6 +59,7 @@ namespace XIVComboKamifiedTestPlugin.Combos
         {
             public const byte
                 Fountain = 2,
+                SaberDance = 76,
                 Bladeshower = 25;
         }
     }
@@ -99,6 +100,13 @@ namespace XIVComboKamifiedTestPlugin.Combos
 
         protected override uint Invoke(uint actionID, uint lastComboMove, float comboTime, byte level)
         {
+            if ((actionID == DNC.FanDance1 || actionID == DNC.FanDance2) && level >= DNC.Levels.SaberDance)
+            {
+                var gauge = GetJobGauge<DNCGauge>();
+                if (gauge.Esprit >= 50)
+                    return DNC.SaberDance;
+            }
+
             if (actionID == DNC.FanDance1)
             {
                 if (HasEffect(DNC.Buffs.FlourishingFanDance))

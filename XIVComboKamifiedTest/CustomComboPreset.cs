@@ -7,7 +7,7 @@ namespace XIVComboKamifiedTestPlugin
     /// </summary>
     public enum CustomComboPreset
     {
-        // Last enum used: 102
+        // Last enum used: 103
         // ====================================================================================
         #region ALL CLASSES
 
@@ -65,6 +65,9 @@ namespace XIVComboKamifiedTestPlugin
         [CustomComboInfo("Burst Shot/Quick Nock into Apex Arrow", "Replaces Burst Shot and Quick Nock with Apex Arrow when gauge is full.", BRD.JobID, BRD.BurstShot, BRD.QuickNock)]
         BardApexFeature = 85,
 
+        [CustomComboInfo("Single Target Rotation", "This is for an Auraly! Enjoy!!", BRD.JobID, BRD.HeavyShot)]
+        BardSingleTarget = 103,
+
         #endregion
         // ====================================================================================
         #region DANCER
@@ -74,7 +77,7 @@ namespace XIVComboKamifiedTestPlugin
 
         [SecretCustomCombo]
         [ConflictingCombos(DancerDanceComboCompatibility)]
-        [CustomComboInfo("Dance Step Combo", "Change Standard Step and Technical Step into each dance step while dancing.", DNC.JobID, DNC.StandardStep, DNC.TechnicalStep)]
+        [CustomComboInfo("Dance Step Combo", "Change Standard Step and Technical Step into each dance step while dancing. Improved version!", DNC.JobID, DNC.StandardStep, DNC.TechnicalStep)]
         DancerDanceStepCombo = 31,
 
         [CustomComboInfo("Flourish Proc Saver", "Change Flourish into any available procs before using.", DNC.JobID, DNC.Flourish)]
@@ -323,6 +326,9 @@ namespace XIVComboKamifiedTestPlugin
         [CustomComboInfo("ED Aetherflow", "Change Energy Drain into Aetherflow when you have no more Aetherflow stacks.", SCH.JobID, SCH.EnergyDrain)]
         ScholarEnergyDrainFeature = 37,
 
+        [CustomComboInfo("Broil with Lucid Dreaming", "Change Broil into lucid dreaming for easier mana management.", SCH.JobID, SCH.Broil)]
+        ScholarManaFeature = 104,
+
         #endregion
         // ====================================================================================
         #region SUMMONER
@@ -380,7 +386,7 @@ namespace XIVComboKamifiedTestPlugin
         [CustomComboInfo("Cure 2 to Cure Level Sync", "Changes Cure 2 to Cure when below level 30 in synced content.", WHM.JobID, WHM.Cure2)]
         WhiteMageCureFeature = 60,
 
-        [CustomComboInfo("Afflatus Feature", "Changes Cure 2 into Afflatus Solace, and Medica into Afflatus Rapture, when lilies are up.", WHM.JobID, WHM.Cure2, WHM.Medica)]
+        [CustomComboInfo("Afflatus Feature", "Changes Cure 2 into Afflatus Solace, and Medica 2 into Afflatus Rapture, when lilies are up.", WHM.JobID, WHM.Cure2, WHM.Medica2)]
         WhiteMageAfflatusFeature = 61,
 
         #endregion
