@@ -205,7 +205,6 @@ namespace XIVComboKamifiedTestPlugin.Combos
                 // Bloodletter
                 if (level > BRD.Levels.Bloodletter)
                 {
-                    Ch
                     var blCooldown = GetCooldown(BRD.Bloodletter);
                     if (blCooldown.CooldownRemaining == 0)
                         return BRD.Bloodletter;
